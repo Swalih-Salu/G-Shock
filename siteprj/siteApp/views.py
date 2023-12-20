@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Sitedetails
+from .form import SiteForm
 # Create your views here.
 def Home(req):
     obj=Sitedetails.objects.all()
@@ -30,3 +31,11 @@ def delete(req,new2_id):
         data.delete()
         return redirect("/")
     return render(req,'delete.html')
+
+def update(req,new3_id):
+    upd=Sitedetails.objects.get(id=new3_id)
+    form=SiteForm(req.POST or None,req.FILES,instance=upd)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    return render(req,'update.html',{'form':form,'upd':upd})
