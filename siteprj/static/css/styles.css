@@ -1,0 +1,38 @@
+
+
+img{
+    width: 100%;
+}
+.logo img{
+   width: 130px;
+}
+.navlast{
+    font-size: smaller;
+}
+.nav2{
+    font-size: smaller;
+}
+.nav2 .navbar-collapse {
+
+    flex-grow: .5;
+    align-items: center;
+}
+.last img{
+    width: 190px;
+}
+.lastr1{
+    font-size: smaller;
+}
+.btmlast{
+    background-color: rgb(226, 226, 224);
+    
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+}
+.btmsndlst{
+    background-color: rgb(237, 232, 232);
+}
+.btmlast h6{
+    font-size: smaller;
+}

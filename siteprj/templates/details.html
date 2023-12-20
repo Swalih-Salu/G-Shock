@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block body%}
+
+
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-6 ">
+            <img src="{{data.image.url}}" width='100%' alt="" srcset="">
+
+        </div>
+        <div class="col-lg-6">
+            <div>
+                <h1 class="text-dark">{{data.name}}</h1>
+                <p >{{data.rating}}<span class="text-primary material-symbols-outlined">
+                    star
+                    </span><span class="text-primary material-symbols-outlined">
+                        star
+                        </span><span class="text-danger material-symbols-outlined">
+                            star
+                            </span><span class="text-danger material-symbols-outlined">
+                                star
+                                </span><span class="text-white material-symbols-outlined">
+                                    star_half
+                                    </span> </p>
+                <div class="row ">
+                    <div class="col-lg-5  ">
+                        <h4>Add to your cart</h4>
+                         
+                    </div>      
+                   <div class="col-lg-3 ">
+                    <button type="button" class="btn btn-outline-dark ">book</button>
+                   </div>
+                </div>
+                <div class="r1inner2 mt-2 ">
+                  <p>{{data.desc}} </p>
+                  {% comment %} The BMW M3 has a madness inside it. Its standard powertrain bottles up 473 horsepower from a twin-turbo straight-six, shoots it through a six-speed manual transmission, and wastes no time delivering it to the rear tires. And that's only the start. The M3 Competition, which is only offered with an eight-speed automatic, increases horsepower to 503 and is offered with your choice of rear- or all-wheel drive. {% endcomment %}
+                </div>
+                <div class="text-center">
+                  {% comment %} <a href="{% url 'site:update' data.id %}"> <button type="button" class="btn btn-outline-warning ">update</button> </a>{% endcomment %}
+                  <button type="button" class="btn btn-outline-success ">${{data.price}}</button> 
+                 <a href="{% url 'site:delete' data.id %}"> <button type="button" class="btn btn-outline-danger ">delete</button> </a>
+                </div> 
+            </div>
+            <div class="row">
+              <div class="col-lg-6"><img src="{%static "/images/31_smartphone.webp" %}" alt=""></div>
+              <div class="col-lg-6"><img src="{%static "/images/62_shock.avif" %}" alt=""></div>
+              <div class="col-lg-3"><img src="{%static "/images/24_solar.avif" %}" alt=""></div>
+              <div class="col-lg-3"><img src="{%static "/images/04_20bar.avif" %}" alt=""></div>
+              <div class="col-lg-3"><img src="{%static "/images/23_in_time.avif" %}" alt=""></div>
+              <div class="col-lg-3"><img src="{%static "/images/58_collaboration.webp" %}" alt=""></div>
+            </div>
+        </div>
+    </div>    
+</div>
+     {% endblock %} 

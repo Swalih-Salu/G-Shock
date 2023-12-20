@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/html/css/styles.css">
+</head>
+<body>
+        <div class="container ">
+            <ul class="nav justify-content-end ">
+              {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link  btn btn-outline-dark" aria-current="page" href="#">{{user.username}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="credential/logout/"><button class="btn btn-outline-dark" type="submit">Logout</button></a>
+              </li>
+              {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link active " href="credential/login/"><button class="btn btn-outline-dark" type="submit">Login</button></a>
+                    </li>
+              {% endif %}
+            </ul> 
+        </div>
+        <nav class="navbar navbar-expand-lg nav2 bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#"><img src="/html/images/logo.jpeg" alt="" srcset="" ></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#">Watches</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Electronic Musical Instruments</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link  text-white" href="credential/register/" role="button" >
+                      Register
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-white" role="button">Label Printers & Others</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                  <a class="nav-link ms-1 " href="{% url 'site:regnew' %}"><button class="btn btn-outline-light" type="submit">New+</button></a>
+                  
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="container-fluide">
+            <img src="/html/images/main-banner-new.avif" alt="">
+            <img src="/html/images/hero-pc.avif" alt="" srcset="">
+          </div>
+      <div>
+        <nav class="navbar bg-light">
+            <div class="container">
+              <a class="navbar-brand"><b>G-SHOCK</b></a>
+              <ul class="nav justify-content-end navlast ">
+                <li class="nav-item">
+                    <a class="nav-link active text-dark" aria-current="page" href="#">G-SHOCK Brand Site</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" href="#">Store Search</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" href="#">Support</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" href="#">Services</a>
+                  </li>
+                </ul> 
+            </div>
+          </nav>
+      </div>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container border-top border-bottom">
+          <a class="navbar-brand" href="#">G-SHOCK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">BABY-G</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PRO TREK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">EDIFICE</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  SHEEN
+                </a>
+                <!-- <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CASIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">VINTAGE</a>
+                  </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+      <div class="container ">
+        <h1 >details</h1>
+        <div class=" row ">
+
+      {% for i in Sitedetails %}
+      <div class="col-lg mt-2"><div class="card " style="width: 18rem;">
+        <a href="details/{{i.id}}"><img src="{{i.image.url}}" class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <p class="card-text">{{i.desc}}.</p>
+        </div>
+      </div></div>
+      {% endfor %}
+ 
+
+
+
+
+
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

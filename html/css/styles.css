@@ -1,0 +1,17 @@
+img{
+    width: 100%;
+}
+.logo img{
+   width: 130px;
+}
+.navlast{
+    font-size: smaller;
+}
+.nav2{
+    font-size: smaller;
+}
+.nav2 .navbar-collapse {
+
+    flex-grow: .5;
+    align-items: center;
+}

@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block body%}
+          <div class="container-fluide">
+            <img src="{% static "/images/main-banner-new.avif" %}" alt="">
+            <img src="{% static "/images/hero-pc.avif" %}" alt="" srcset="">
+          </div>
+      <div>
+        <nav class="navbar bg-light">
+            <div class="container">
+              <a class="navbar-brand"><b>G-SHOCK</b></a>
+              <ul class="nav justify-content-end navlast ">
+                <li class="nav-item">
+                    <a class="nav-link active text-dark" aria-current="page" href="#">G-SHOCK Brand Site</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" href="#">Store Search</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" href="#">Support</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" href="#">Services</a>
+                  </li>
+                </ul> 
+            </div>
+          </nav>
+      </div>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container border-top border-bottom">
+          <a class="navbar-brand" href="#">G-SHOCK</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">BABY-G</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PRO TREK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">EDIFICE</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  SHEEN
+                </a>
+                <!-- <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CASIO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">VINTAGE</a>
+                  </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+    <div class="container ">
+        <h1 >Watches</h1>
+        <div class=" row ">
+
+      {% for i in Sitedetails %}
+      <div class="col-lg mt-2">
+        <div class="card " style="width: 18rem;">
+          <a href="details/{{i.id}}"><img src="{{i.image.url}}" class="card-img-top" alt="..."></a>
+          <div class="card-body ">
+            <h3 class="card-text">{{i.name}}.</h3>
+            <p class="card-text">${{i.price}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+        </div>
+    </div>
+
+    {% endblock %} 
